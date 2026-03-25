@@ -43,10 +43,15 @@ document.querySelectorAll('.section').forEach(s=>{
 s.classList.remove('active');
 });
 
+document.querySelectorAll('.main-nav button').forEach(btn=>{
+btn.classList.toggle('is-active', btn.dataset.section === id);
+});
+
 let el = document.getElementById(id);
 
 if(el){
 el.classList.add('active');
+window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 if(id==="garagem"){
@@ -865,3 +870,4 @@ renderClientes();
 renderCarrosRifa();
 renderRifas();
 dashboard();
+document.querySelector('.main-nav button[data-section="estoque"]')?.classList.add('is-active');
