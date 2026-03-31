@@ -158,6 +158,7 @@ ${c.imgs && c.imgs.length > 0 ? `
 
 <button onclick="editarItem(${i})">✏️</button>
 <button onclick="vender(${i})">💰</button>
+<button onclick="remover(${i})">🗑️</button>
 
 </div>
 `;
