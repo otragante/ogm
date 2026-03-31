@@ -37,6 +37,22 @@ localStorage.setItem("vendas",JSON.stringify(vendas));
 localStorage.setItem("despesas",JSON.stringify(despesas)); // 👈 aqui
 }
 
+function exportar(){
+    let dados = {
+        estoque,
+        clientes,
+        vendas,
+        despesas,
+        rifas
+    };
+
+    let blob = new Blob([JSON.stringify(dados)], {type:"application/json"});
+    let a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "backup.json";
+    a.click();
+}
+
 function show(id){
 
 document.querySelectorAll('.section').forEach(s=>{
